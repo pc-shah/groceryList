@@ -1,0 +1,36 @@
+<div>
+    <h2> Grocery list manager </h2>
+
+    <div class="row" [formGroup]="form">
+        <div class="col-xs-6 col-md-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="enter grocery items" id="txtSearch"
+                    formControlName="item" />
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="input-group">
+                <input type="number" class="form-control" placeholder="enter price" id="price"
+                    formControlName="price" />
+                <div class="input-group-btn">
+                    <button class="btn btn-primary" type="button" (click)="addItems()">
+                        <span class="glyphicon glyphicon-ok">Click To Add Groceries</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group">
+        <li *ngFor="let item of groceryItems; let i = index" class="list-group-item">
+            <span> {{ item?.item }} </span>
+            <span> - {{ item?.price }} </span>
+            <button class="btn btn-primary" (click)="addToCart(item)">Add to cart</button>
+        </li>
+    </ul>
+
+    <p>No of items added to your cart are: {{cartItems.length}}</p>
+
+    <button class="btn btn-primary" (click)="moveToList()">Move to cart</button>
+
+</div>

@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "GroceryList"
+  "defaultProject": "GroceryList",
+  "cli": {
+    "analytics": "4216b97e-8e64-4d02-b097-d2a02e69d89f"
+  }
 }
